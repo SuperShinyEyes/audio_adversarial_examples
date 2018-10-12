@@ -26,8 +26,9 @@ RUN apt-get update && apt-get install -y git && \
 	# For plotting audio files
 	apt-get install -y python3-tk
 
-RUN pip install pyxdg deepspeech-gpu
-RUN pip install pydub
+RUN pip install pyxdg pydub
+
+RUN pip install deepspeech-gpu==0.2.0a8
 
 # Solve Jupyter permission issue
 CMD unset XDG_RUNTIME_DIR && \
